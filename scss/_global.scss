@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  min-height: 100vh;
+  background: $very-Pale-Blue url(../images/bg-pattern.svg) no-repeat left top;
+  background-size: 100% 40%;
+}
+
+h1 {
+  font-size: 0.9375rem;
+  color: $dark-Desaturated-Blue;
+
+  @include breakpoint-up(medium) {
+    font-size: 1.5rem;
+  }
+}
+
+p {
+  font-size: 0.6875rem;
+  color: $grayish-Blue;
+  font-weight: 600;
+
+  @include breakpoint-up(medium) {
+    font-size: 0.9375rem;
+  }
+}
+.container {
+  width: #{"min(90%, 33.9375rem)"};
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}

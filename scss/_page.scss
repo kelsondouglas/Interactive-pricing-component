@@ -1,0 +1,248 @@
+.text {
+  padding-top: 5.0625rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  &::before {
+    content: "";
+    background: url(../images/pattern-circles.svg) no-repeat center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  p {
+    padding: 14px 0 57px 0;
+
+    @include breakpoint-down(medium) {
+      max-width: 158px;
+      text-align: center;
+    }
+  }
+}
+
+.box {
+  background: $white;
+  border-radius: 10px;
+  box-shadow: 0 0 50px rgba($color: #000000, $alpha: 0.1);
+}
+
+.box-content {
+  padding: 30px 42px 0px 42px;
+}
+
+.line1 {
+  p {
+    text-align: center;
+  }
+
+  .letter-spacing {
+    letter-spacing: 1.5px;
+  }
+
+  span {
+    font-size: 1.6875rem;
+    color: $dark-Desaturated-Blue;
+    font-weight: 700;
+
+    @include breakpoint-up(medium) {
+      font-size: 2.4375rem;
+    }
+  }
+
+  @include breakpoint-up(medium) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    align-items: center;
+    justify-items: start;
+
+    .pricing {
+      grid-column: 2/3;
+      grid-row: 1/2;
+      justify-self: end;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  input[type="range"] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+    margin: 2rem 0;
+    background: linear-gradient(90deg, $soft-Cyan 50%, $light-Grayish-Blue 50%);
+    border-radius: 10px;
+    height: 8px;
+
+    @include breakpoint-up(medium) {
+      grid-column: 1/3;
+      margin: 2.75rem 0;
+    }
+  }
+
+  input[type="range"]:focus {
+    outline: none;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 40px;
+    height: 40px;
+    background: $strong-Cyan url(../images/icon-slider.svg) no-repeat center
+      center;
+    border-radius: 60px;
+    box-shadow: 0 0 18px rgba($strong-Cyan, $alpha: 0.8);
+    cursor: pointer;
+
+    &:hover {
+      background: $soft-Cyan url(../images/icon-slider.svg) no-repeat center
+        center;
+      box-shadow: 0 0 18px rgba($soft-Cyan, $alpha: 1);
+    }
+  }
+}
+
+.line3 {
+  justify-content: flex-end;
+  height: 20px;
+  align-items: center;
+  margin: 35px 0;
+
+  @include breakpoint-up(medium) {
+    margin-bottom: 40px;
+    margin-top: 0;
+  }
+
+  p {
+    font-size: 0.6875rem;
+  }
+
+  @include breakpoint-up(medium) {
+    height: 22px;
+  }
+
+  #switch-input {
+    -webkit-appearance: none;
+    outline: none;
+    height: 100%;
+    width: 38px;
+    margin: 0 10px;
+    background: $light-Grayish-Blue-toggle;
+    border-radius: 10px;
+    position: relative;
+    transition: background 0.3s ease;
+
+    @include breakpoint-up(medium) {
+      width: 42px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: white;
+      top: 3px;
+      left: 3px;
+      right: inherit;
+      transition: 0.3s ease-in-out;
+
+      @include breakpoint-up(medium) {
+        top: 4px;
+      }
+    }
+
+    &:checked {
+      background: $soft-Cyan;
+
+      &::before {
+        left: 17px;
+
+        @include breakpoint-up(medium) {
+          left: 25px;
+        }
+      }
+    }
+  }
+
+  .discount {
+    background: $light-Grayish-Red;
+    color: $light-Red;
+    padding: 4px 6px;
+    border-radius: 10px;
+    font-size: 0.5rem;
+    font-weight: 700;
+    margin-left: 12px;
+
+    @include breakpoint-up(medium) {
+      &::after {
+        content: " discount";
+      }
+    }
+  }
+}
+
+.box-footer {
+  padding: 22px 42px 34px 42px;
+  border-top: 1px solid $light-Grayish-Blue;
+
+  .line4 {
+    flex-direction: column;
+    align-items: center;
+
+    @include breakpoint-up(medium) {
+      flex-direction: initial;
+      align-items: initial;
+      justify-content: space-between;
+    }
+
+    .list {
+      .item-list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 14px;
+
+        @include breakpoint-up(medium) {
+          justify-content: start;
+        }
+
+        p {
+          margin-left: 14px;
+          font-size: 0.6875rem;
+        }
+
+        img {
+          width: 9px;
+          height: 7px;
+        }
+      }
+    }
+    button {
+      border: none;
+      background: $dark-Desaturated-Blue;
+      color: $pale-Blue;
+      font-weight: 700;
+      padding: 14px 40px;
+      border-radius: 20px;
+      font-size: 0.6875rem;
+      align-self: center;
+      cursor: pointer;
+
+      &:hover {
+        color: $white;
+      }
+
+      @include breakpoint-up(medium) {
+        padding: 16px 46px;
+      }
+    }
+  }
+}
